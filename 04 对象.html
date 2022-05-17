@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = new Object();//创建
+        person.name = "张三";
+        person.age = 13;//增加
+        console.log(person)
+        person.age = 14;//修改
+        console.log(person.age)//查询
+        delete person.age//删除
+        console.log(person)
+        for (let index = 0; index < 15; index++) {
+            console.log(index)
+
+        }
+        {
+            var a = 0
+            console.log(a)
+        }
+        console.log(a)
+        //对象的引用
+        var obj = new Object();
+        obj.name = "孙悟空";
+        var obj2 = obj;//--->此时的object1和object2都是指向同一个堆的内存地址
+        //修改obj的name属性
+        obj.name = "猪八戒";
+        console.log(obj.name);
+        console.log(obj2.name);
+
+        obj2 = null;
+        console.log(obj);
+        console.log(obj2); //此时是直接的对object2的索引进行修改
+
+        var obj3 = new Object();
+        var obj4 = new Object();
+        obj3.name = "沙和尚";
+        obj4.name = "沙和尚";
+        console.log(obj3== obj4);//这里是两个不同的对象，虽然里面的内容都相同，但不是两个相同的对象
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fun1=new Function("console.log('test1')")
+        //使用构造函数的方式去创造函数--->一般没病就不会用
+
+        function fun2(){
+            console.log("test2")
+        }
+        //使用函数声明来创建函数
+
+        var fun3=function(){
+            console.log("test3")
+        }
+        //使用赋值
+        fun1()
+        fun2()
+        fun3()
+
+
+    </script>
+</body>
+</html>
