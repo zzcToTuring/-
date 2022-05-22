@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="test1">
+        <li id="test2"> 1 </li>
+        <li id="test3"> 2 </li>
+        <li id="test4"> 3 </li>
+        <li id="test5"> 4 </li>
+        <li id="test6"> 5 </li>
+    </ul>
+
+</body>
+<script>
+    //通过document方式获取对象调用
+    var wm1 = document.getElementById("test1")//id的属性只有一个，只能获取一个
+    var wm2 = document.getElementsByTagName("ul")[0]//返回一个数组
+    var wm3 = document.getElementById("test4")
+    console.log(wm1==wm2)//两者所指向的是同一个东西
+    //获取元素结点的子节点
+    console.log(wm1.getElementsByTagName("li")[0].innerHTML)
+    //获取所有的孩子结点
+    console.log(wm1.childNodes.length)//注意是所有的结点，把空格都算进去了
+    //要单独指定元素的话，需要使用children
+    console.log(wm1.children.length)
+    //第一个子节点和最后一个子节点firstchild同样也会获取空格和换行
+    console.log(wm1.firstElementChild.innerHTML+"----"+wm1.lastElementChild.innerHTML)
+    //获取父节点 parentNode同样的会把空节点给算上去
+    console.log(wm3.parentElement.innerHTML)
+    //前一个兄弟结点和后一个兄弟结点，同样的previousSibling，nextSibling也会把他算进去
+    console.log(wm3.previousElementSibling.innerHTML+"---"+wm3.nextElementSibling.innerHTML)
+
+
+
+</script>
+
+</html>

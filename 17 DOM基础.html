@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //此时页面构建完成，不能活动相关的元素
+    //window.onload表示当页面构建完成之后所要做的事情，如果下面也写的话，明显是显示这个弹窗
+    //等到下面构建完成，这个才开始操作，覆盖了之前的操作
+    // window.onload=function(){
+    //     document.getElementById("btn01").onclick = function () {
+    //         alert("上方script提醒")
+    //     }
+
+    // }  
+</script>
+<body>
+    <button id="btn01">我是一个按钮</button>
+    <button>中文</button>
+    <script>
+    /*
+      * 浏览器已经为我们提供 文档节点 对象这个对象是window属性
+      * 可以在页面中直接使用，文档节点代表的是整个网页
+    */
+   //innerHTML---修改HTML中的属性  <bt>这是HTML中的相关属性<bt>
+   var btn01=document.getElementById("btn01")
+   btn01.innerHTML="this is a button"
+
+   //function函数的写法，当然也能直接在页面上写onclick,但是这样的写法不便于维护
+   btn01.onclick=function(){
+       alert("hello world")
+   }
+   //window.onload页面的加载都是从上到下的，有些JavaScript是写在body的上方
+   var btn02=document.getElementsByTagName("button")[1]
+   btn02.onclick=function(){
+       btn01.innerHTML="按钮选项"
+   }
+    </script>
+
+</body>
+
+</html>

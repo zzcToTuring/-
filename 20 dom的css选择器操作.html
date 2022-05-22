@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="test1">
+        <div>1、test1中的div</div>
+
+    </div>
+    <div class="test2">
+        <div>2、test2中的div</div>
+    </div>
+    <div class="test1">
+        <div>3、test1中的div</div>
+    </div>
+</body>
+<script>
+    //获取body标签
+    document.body
+    //获取根标签
+    document.documentElement
+    //获得所有的标签
+    document.all//基本上已经不用了
+    console.log(document.all.length)//<></>标签有多少个
+    //根据class获取元素,同样也是放在数组里面
+    var t1 = document.getElementsByClassName("test1")
+    console.log(t1.length)
+    //根据CSS选择器的方式，指定相关的div,只能选择一个
+    var t2=document.querySelector(".test1 div ")
+    console.log(t2.innerHTML)
+    // 根据CSS选择器的方式，指定相关的div,以数组的形式，选择所有的
+    var t3=document.querySelectorAll(".test1 div")
+    console.log(t3[0].innerHTML+"   "+t3[1].innerHTML)
+
+</script>
+
+</html>

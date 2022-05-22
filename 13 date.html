@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1、创建一个date对象
+        var d1=new Date()//当前的时间
+        var d2=new Date("2/16/2022 15:00:00")//指定时间 月份/日/年 时:分:秒
+        console.log(d1.getDate())//获得日期是几日
+        console.log(d1.getDay())//获得周几，从0-6依次表示周日到周六---->0表示周日，3表示周三
+        console.log(d1.getHours()+"----"+d1.getMinutes()+"-----"+d1.getSeconds())//获得小时数,分钟数，秒数
+        console.log(d1.getMonth())//获得月份，从0-11.0表示一月，1表示二月...依次类推
+        console.log(d1.getFullYear())//获得年份
+
+        console.log(d2.getTime())//获得当时的时间戳
+        //举例，用时间戳来检测性能
+        var start=d2.getTime()
+        for (let index = 0; index < 10000; index++) {
+            console.log(index);
+        }
+        var end=d2.getTime()
+        var used=end-start
+        console.log("使用了"+used +"毫秒")
+    </script>
+</body>
+</html>

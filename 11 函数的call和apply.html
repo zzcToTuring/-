@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(a,b){
+            console.log(a,b)
+            console.log(this.name)
+        }
+        var obj={
+            name:"obj",
+            sayName:function(){
+                alert(this.name)
+            }
+        }
+        //调用方式
+        test(1,2)
+        test.call(window,3,4)//第一个参数是this的指向，填谁this就是谁，后面的参数正常传递
+        test.apply(window,[5,6])//同上，第一个参数是this的指向，后面的参数要填成数组的形式
+        test.call(obj,7,8)
+
+        console.log('-------------------------------------')
+        var obj2={name:"obj2"}
+        obj.sayName()//------->是obj调用，此时的this是obj
+        obj.sayName.call(obj2)//----------->上面填了参数是obj2，所以此时的this不管谁调用，都是obj2
+
+    </script>
+    
+</body>
+</html>
