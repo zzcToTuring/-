@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./22css.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="employeeTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>tom@tom.com</td>
+            <td>5000</td>
+            <td>
+                <a href="javascript:;">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Jerry</td>
+            <td>jerry@sohu.com</td>
+            <td>8000</td>
+            <td>
+                <a href="deleteEmp?id=002">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>bob@tom.com</td>
+            <td>10000</td>
+            <td>
+                <a href="deleteEmp?id=003">Delete</a>
+            </td>
+        </tr>
+    </table>
+
+    <div id="formDiv">
+
+        <h4>添加新员工</h4>
+
+        <table>
+            <tr>
+                <td class="word">name: </td>
+                <td class="inp">
+                    <input type="text" name="empName" id="empName" />
+                </td>
+            </tr>
+            <tr>
+                <td class="word">email: </td>
+                <td class="inp">
+                    <input type="text" name="email" id="email" />
+                </td>
+            </tr>
+            <tr>
+                <td class="word">salary: </td>
+                <td class="inp">
+                    <input type="text" name="salary" id="salary" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="addEmpButton">
+                        Submit
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+<script>
+    //1、给所有的删除(a)标签都绑定一个点击事件
+    var addA = document.getElementsByTagName("a")
+    for (let index = 0; index < addA.length; index++) {
+        addA[index].onclick = delA
+    }
+    //2、删除数据的操作
+    function delA() {
+        var tr = this.parentElement.parentElement;
+        var name = tr.firstElementChild.innerHTML
+        if (confirm("确定删除" + name + "？")) {
+            tr.parentNode.removeChild(tr)
+        }
+        return false//阻止默认的行为，a标签的默认行为是跳转的指定的页面
+    }
+    //3 提交按钮
+    var addEmpButton = document.getElementById("addEmpButton");
+    addEmpButton.onclick = function () {
+        var name = document.getElementById("empName").value;
+        //获取员工的email和salary
+        var email = document.getElementById("email").value;
+        var salary = document.getElementById("salary").value;
+        var tr = document.createElement("tr");
+        // //这样的方式配置tr中的相关元素，但可以会出现一些无法预知的问题
+        // var aTd = document.createElement("td");
+        // var a = document.createElement("a");
+        // a.innerHTML="delete"
+        // aTd.appendChild(a);
+        // a.href="#"
+        // a.onclick = delA;
+        // tr.innerHTML += "<tr>" +
+
+        //     "<td>" + name + "</td>" +
+        //     "<td>" + email + "</td>" +
+        //     "<td>" + salary + "</td>" +
+        //     + "</tr>";
+        // tr.appendChild(aTd)
+       
+
+
+
+
+
+        //创建结点并添加属性
+        var nameTd = document.createElement("td");
+        nameTd.innerHTML=name
+        var emailTd = document.createElement("td");
+        emailTd.innerHTML=email
+        var salaryTd = document.createElement("td");
+        salaryTd.innerHTML=salary
+
+        //td里面包含a，a里面包括文字，跳转到哪里，点击事件
+        var aTd = document.createElement("td");
+        var a = document.createElement("a");
+        a.innerHTML="delete"
+        aTd.appendChild(a);
+        a.href="#"
+        a.onclick = delA;
+        //新创建的tr组合好
+        tr.appendChild(nameTd);
+        tr.appendChild(emailTd);
+        tr.appendChild(salaryTd);
+        tr.appendChild(aTd);
+        //获取table
+        var employeeTable = document.getElementById("employeeTable");
+        //获取employeeTable中的tbody
+        var tbody = employeeTable.getElementsByTagName("tbody")[0];
+        //将tr添加到tbodye中
+        tbody.appendChild(tr);
+
+        document.getElementById("empName").value=""
+        document.getElementById("email").value="";
+        document.getElementById("salary").value="";
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+</script>
+
+</html>

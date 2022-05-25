@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1 {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <div id="box1">
+
+    </div>
+    <button id="bt1">修改宽度</button>
+    <button id="bt2">修改背景</button>
+    <button id="bt3">显示宽度</button>
+    <button id="bt4">显示颜色</button>
+
+</body>
+<script>
+    var box1=document.getElementById("box1")
+    var bt1 = document.getElementById("bt1")
+    var bt2 = document.getElementById("bt2")
+    var bt3 = document.getElementById("bt3")
+    var bt4 = document.getElementById("bt4")
+     /*
+       note:
+       1、元素.style.样式名 = 样式值 通过JS修改元素的样式
+       2、如果CSS的样式名中含有-，这种名称在JS中是不合法的比如background-color,需要将这种样式名修改为驼峰命名法去掉-，然后将-后的字母大写
+       3、但是如果在样式中写了!important，则此时样式会有最高的优先级，即使通过JS也不能覆盖该样式，此时将会导致JS修改样式失效
+       */
+    bt1.onclick = function () {
+        box1.style.width = "300px"
+
+    }
+    bt2.onclick = function () {
+       box1.style.backgroundColor = "yellow"
+    }
+    /*
+		getComputedStyle()这个方法来获取元素当前的样式
+ 		这个方法是window的方法，可以直接使用
+		需要两个参数
+	 		第一个：要获取样式的元素
+			第二个：可以传递一个伪元素，一般都传null
+        语法---->getComputedStyle().width
+        如果获取的样式没有设置，则会获取到真实的值，而不是默认值
+        元素.currentStyle.样式名----->只有IE浏览器才能用
+    */
+    bt3.onclick=function(){
+        alert(getComputedStyle(box1,null).width)
+        
+    }
+    bt4.onclick=function(){
+        alert(getComputedStyle(box1,null).backgroundColor)
+    }
+   
+   
+</script>
+
+</html>

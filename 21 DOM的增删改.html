@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul id="list">
+            <li>A</li>
+            <li>B</li>
+            <li id="test1">C</li>
+            <li id="test2">D</li>
+            <li>E</li>
+        </ul>
+    </div>
+    <button id="addDom01">添加一个DOM</button>
+    <button id="addDom02">在最前添加一个DOM</button>
+    <button id="replace">替换DOM</button>
+    <button id="delete">删除DOM</button>
+    <button id="change">修改结点</button>
+    <button id="addDom03">innerHTML方式添加dom</button>
+
+
+</body>
+<script>
+    /*
+    appendChild()
+        - 向一个父节点中添加一个新的子节点
+        - 用法：父节点.appendChild(子节点);
+    createElement---->添加元素
+    createTextNode---->添加文字
+
+    
+        
+    */
+    var but01 = document.getElementById("addDom01")
+    but01.onclick = function () {
+        var temp1 = document.createElement("li")
+        var temp2 = document.createTextNode("F")
+        temp1.appendChild(temp2)//是li标签里面包含着文字
+        document.getElementById("list").appendChild(temp1)
+    }
+    /*
+    insertBefore(参数1，参数2)
+    可以在指定的子节点前插入新的子节点
+    父节点.insertBefore(新节点,旧节点); 
+    */
+    var but02 = document.getElementById("addDom02")
+    but02.onclick = function () {
+        var temp1 = document.createElement("li")
+        var temp2 = document.createTextNode("Z")
+        var temp = document.getElementById("list").children[0]//第一个li
+        temp1.appendChild(temp2)
+        document.getElementById("list").insertBefore(temp1, temp)
+
+    }
+    /*
+    replaceChild()
+                            - 可以使用指定的子节点替换已有的子节点
+                            - 语法：父节点.replaceChild(新节点,旧节点);
+    */
+    var but03 = document.getElementById("replace")
+    but03.onclick = function () {
+        var temp1 = document.createElement("li")
+        var temp2 = document.createTextNode("Z")
+        var temp = document.getElementById("test1")//C
+        temp1.appendChild(temp2)//构成一个新的结点
+        document.getElementById("list").replaceChild(temp1, temp)
+
+    }
+
+    /*
+    removeChild()
+        - 可以删除一个子节点
+        - 语法：父节点.removeChild(子节点);
+        子节点.parentNode.removeChild(子节点);
+    */
+    var but04 = document.getElementById("delete")
+    but04.onclick = function () {
+        var temp = document.getElementById("test1")//C
+        document.getElementById("list").removeChild(temp)
+
+    }
+
+    var but05 = document.getElementById("change")
+    but05.onclick = function () {
+        var temp = document.getElementById("test1")//C
+        temp.innerHTML = "修改之后的C"
+
+    }
+    /*
+    一般的方式是
+        var temp1 = document.createElement("li")
+        var temp2 = document.createTextNode("F")
+        temp1.appendChild(temp2)
+        
+        创建一个li标签，里面什么都没有
+        创建一些文字
+        把文字作为li标签的子节点进行添加，此时li标签就有了文字属性，不然就是一个空的li标签
+        然后在使用添加的方式比如appendChild('xxx')完成页面的添加
+
+    but06的方式：
+        在创建完li标签以后，添加文字并且子节点的赋值，不就是把刚刚创建的li标签的innerHTML的属性赋值给文字吗
+        那直接   temp1.innerHTML="使用inner方式添加"不就可以行结点所有内容的创建嘛
+    */
+    var but06 = document.getElementById("addDom03")
+    but06.onclick = function () {
+        var temp1 = document.createElement("li")
+        temp1.innerHTML="使用inner方式添加"
+        document.getElementById("list").appendChild(temp1)
+    }
+    /*
+    复制结点：obj.cloneNode(temp)//使用这个方式来复制元素
+    temp:1/true :表示复制元素本身以及复制该元素下所有的子元素
+        ：0/flase：表示仅仅复制元素本身，不复制该元素下的子元素
+    */
+
+
+
+
+
+
+
+</script>
+
+</html>
