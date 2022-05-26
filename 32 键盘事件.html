@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="test"/>
+</body>
+<script>
+    /*
+    
+    键盘事件：
+			onkeydown
+				  按键被按下
+				  对于onkeydown来说如果一直按着某个按键不松手，则事件会一直触发
+				  当onkeydown连续触发时，第一次和第二次之间会间隔稍微长一点，其他的会非常的快
+	    			这种设计是为了防止误操作的发生。
+		 	onkeyup
+		 		- 按键被松开 
+				 键盘事件一般都会绑定给一些可以获取到焦点的对象或者是document
+    */
+    /*
+        keyCode来获取按键的编码,通过它可以判断哪个按键被按下
+        enter：13 space：32 数字0-9：48-57 96-105（小键盘）
+        altKey,ctrlKey,shiftKey 这个三个用来判断alt ctrl 和 shift是否被按下
+
+
+    */
+    document.onkeydown=function(e){
+        console.log(e.keyCode)
+    }
+    //在input中输入内容，属于onkeydown的默认行为
+    //阻止默认行为，使用return false || e.preventDefault()
+    var input=document.getElementById("test")
+    input.onkeydown=function(e){
+        if(e.keyCode>=48 &&e.keyCode<=57 ){
+            alert("不能输入数字")
+            e.preventDefault()
+        }
+    }
+
+</script>
+</html>

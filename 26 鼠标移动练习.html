@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1 {
+        background-color: brown;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        /* 必须要设置绝对定位才能实现案例 */
+    }
+</style>
+
+<body>
+    <div id="box1">
+
+    </div>
+</body>
+<script>
+    //在整个页面上绑定鼠标移动事件
+    var box1 = document.getElementById("box1")
+    document.onmousemove = function (e) {
+        console.log("鼠标移动")
+        //scrollLeft 可以获取水平滚动条滚动的距离 scrollTop 可以获取垂直滚动条滚动的距离
+        var st = document.body.scrollTop
+        var sl = document.body.scrollLeft
+        // pageX和pageY可以获取鼠标相对于当前页面的坐标, 但是这个两个属性在IE8中不支持，所以如果需要兼容IE8，则不要使用
+        // clientX和clientY用于获取鼠标在当前的可见窗口的坐标
+        var left = e.clientX
+        var top = e.clientY
+        box1.style.left = left +st+ "px";
+        box1.style.top = top +sl + "px";
+        
+        /*
+        //获取滚动条滚动的距离
+		chrome认为浏览器的滚动条是body的，可以通过body.scrollTop来获取
+		火狐等浏览器认为浏览器的滚动条是html的，	 
+        var st = document.body.scrollTop || document.documentElement.scrollTop;
+        var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+					//var st = document.documentElement.scrollTop;
+        
+        */
+        /*
+         事件的冒泡（Bubble）
+				 * 	- 所谓的冒泡指的就是事件的向上传导，当后代元素上的事件被触发时，其祖先元素的相同事件也会被触发
+				 * 	- 在开发中大部分情况冒泡都是有用的,如果不希望发生事件冒泡可以通过事件对象来取消冒泡
+         可以将事件对象的cancelBubble设置为true，即可取消冒泡
+					event.cancelBubble = true;
+        
+        */
+
+
+    }
+</script>
+
+</html>

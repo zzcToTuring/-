@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="u1" style="background-color: #bfa;">
+        <li>
+            <p>我是p元素</p>
+        </li>
+        <li><a href="javascript:;" class="link">超链接一</a></li>
+        <li><a href="javascript:;" class="link">超链接二</a></li>
+        <li><a href="javascript:;" class="link">超链接三</a></li>
+    </ul>
+    <button id="but">添加超链接</button>
+</body>
+<script>
+    /*
+    事件的委派：
+        情景导入：
+            我们需要给每一个a标签都添加一个点击事件，在初始的状态下我们可以直接利用for循环添加点击事件
+            但是我们还有一个功能是添加一个新的a标签，但这样添加的标签，就没有点击事件了，需要重新添加，这在实际操作中就显得有点麻烦
+        定义：我们在a标签的的父标签上面定义了一个点击事件，根据冒泡原理，这样的话就所有的a标签都能有点击事件了
+             缺点：但他的父标签下面不仅仅只有a标签，还存在着其他的标签，这个时候在所有标签上面加一个class，class==xxx的时候才有点击事件
+        好处：提高了程序的效率
+
+    */
+    //给u1赋上点击事件
+    var u1= document.getElementById("u1")
+    u1.onclick = function (e) {
+        //target - event中的target表示的触发事件的对象
+        if(e.target.className=="link"){//只有className是link的时候，才有弹窗显示
+            alert("ul....")
+            //console.log(this)------->this指的是ul
+        }
+        
+    }
+    document.getElementById("but").onclick = function () {
+        var li = document.createElement("li")
+        li.innerHTML = '<a href="javascript:;" class="link">新的超链接</a>'
+        u1.appendChild(li)
+    }
+
+</script>
+
+</html>

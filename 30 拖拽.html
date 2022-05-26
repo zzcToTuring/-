@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div id="box1"></div>
+</body>
+<script>
+    /*
+        拖拽box1元素
+        拖拽的流程
+        当鼠标在被拖拽元素上按下时，开始拖拽  onmousedown
+        当鼠标移动时被拖拽元素跟随鼠标移动 onmousemove
+        当鼠标松开时，被拖拽元素固定在当前位置	onmouseup
+     */
+    var box1 = document.getElementById("box1");
+    box1.onmousedown = function (e) { 
+        //记录一下位置
+        var ol=e.pageX
+        var ot=e.pageY
+        console.log("按下时候的位置"+ol+"-"+ot)
+       //在按下的时候，鼠标的全局移动
+       
+       document.onmousemove = function (e) {
+            box1.style.left = e.pageX + "px"
+            box1.style.top = e.pageY + "px"
+            console.log("正在移动中" + e.pageX + "--" + e.pageY)
+        }
+        document.onmouseup = function () {
+            console.log("鼠标抬起，流程结束")
+            document.onmousemove = null
+            document.onmouseup = null
+        }
+        return false
+     }
+    
+     //在鼠标抬起来的时候，整个流程都已经走完了
+
+     /*
+                        * 当我们拖拽一个网页中的内容时，浏览器会默认去搜索引擎中搜索内容，
+                        * 	此时会导致拖拽功能的异常，这个是浏览器提供的默认行为，
+                        * 	如果不希望发生这个行为，则可以通过return false来取消默认行为
+                        * 
+                        * 但是这招对IE8不起作用
+                        */
+     
+
+</script>
+
+</html>
