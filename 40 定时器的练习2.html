@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #box1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        left: 0;
+    }
+</style>
+
+<body>
+    <button id="btn01">点击按钮以后box1向右移动</button>
+    <button id="btn02">点击按钮以后box1向左移动</button>
+
+    <br /><br />
+
+    <div id="box1"></div>
+</body>
+<script>
+    var btn01 = document.getElementById("btn01")
+    var btn02 = document.getElementById("btn02")
+    var box1 = document.getElementById("box1")
+    var timer
+    btn01.onclick = function () {
+        move2(box1, 800, 10)
+    }
+    btn02.onclick = function () {
+        move2(box1, 0, 10)
+    }
+    //对象，走到哪里，速度(以定时器的速度为基准)
+    function move(obj, where, speed) {
+        clearInterval(timer)
+
+        timer = setInterval(function () {
+            var old = parseInt(getComputedStyle(obj, null).left)//获得此时的左边距
+            if (where > old) {
+                //说明要往右走
+                old++
+                obj.style.left = old + "px"
+                if (where <= old) {
+                    clearInterval(timer)
+                }
+
+            } else {
+                old--
+                obj.style.left = old + "px"
+                if (where >= old) {
+                    clearInterval(timer)
+                }
+            }
+
+        }, speed)
+
+    }
+
+    //对象，位置，速度（一次偏移的量），相比于上面的方式，这个减少了更多的分支
+    function move2(obj, where, speed) {
+        clearInterval(timer)
+        var old = parseInt(getComputedStyle(obj, null).left)
+        if (where < old) {//往左走
+            speed = -speed
+
+        }
+        timer = setInterval(function () {
+            old = parseInt(getComputedStyle(obj, null).left)//获得此时的左边距
+            obj.style.left = old + speed + "px"
+            //右边走的时候到了--->现在的位置>定义的位置  || 左边走的时候到了---->现在的位置<定义的位置
+            if ((old >= where && speed > 0) || (old <= where && speed < 0)) {
+                clearInterval(timer)
+            }
+
+        }, 50)
+    }
+</script>
+
+</html>
