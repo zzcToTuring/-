@@ -1,8 +1,6 @@
-let a=[1,2,3]
-let b=[...a]
+const test="world"
+const a="hi "+test+"!"
 console.log(a)
-console.log(b)
-console.log("-------")
-a=[1,2,3,4]
-console.log(a)
+
+const b=`hi ${test}!`
 console.log(b)
