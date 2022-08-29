@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1、定义：ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构赋值；
+        // 数组的解析赋值---> 直接把const中的test的值赋给下面的值
+        const test=[1,2,3,4]
+        let [a,b,c,d]=test
+        console.log(a,b,c,d)
+        // 对象的解析赋值
+        const test2={
+            name:"zhangsan",
+            age:11,
+            sex:"man",
+            show:function(){
+                console.log("show函数")
+            }
+        }
+        //正常写法显得麻烦
+        console.log(test2.name,test2.age,test2.sex)
+        test2.show()
+        //对象解析赋值
+        console.log("-------------------")
+        let { name, age, sex,show}=test2
+        console.log(name,age,sex)
+        show()
+        
+        //简单来说，数组let需要使用数组去接，对象的写法let也要使用对象的写法去接
+    </script>
+</body>
+</html>
