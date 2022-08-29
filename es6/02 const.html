@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 与let相似的，const也是一个关键字用于声明常量使用，const具有以下的特点
+        // 1、声明必须赋初始值，一般的标识符都是大写，而不允许重复声明
+        // 2、只读性，值不允许修改，PS：数组使用关键字修改除外，例如vue的数组修改实现页面的渲染
+        // 3、块级作用域
+        //使用场景：声明对象类型使用const，非对象类型的声明选择let
+        const team=["A","B","C"]
+        //team[3]="D"//报错  emmm为什么不报错我也不知道了
+        team.push("D")
+        console.log(team)
+    </script>
+</body>
+</html>
