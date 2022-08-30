@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        //简单来说就是将一个数组进行分割 test=[a,b,c,d]---->(...test)--->"a","b","c","d"
+        //与前面的reset相似，但一个是在函数定义时，一个是在函数调用时
+        //1、数组的拼接
+        let a = [1, 2, 3, 4]
+        let b = [5, 6, 7, 8]
+        //let c=a.concat(b) //使用concat进行拼接
+        let c = [...a, ...b]
+        console.log(c)
+
+        //2、数组的克隆(浅克隆，索引)
+        let d = [9, 10, 11]
+        let copy_d = [...d]
+        console.log(copy_d)
+        //
+        //3. 将伪数组转为真正的数组 
+        const divs = document.querySelectorAll('div');
+        const divArr = [...divs];
+        console.log(divArr); // arguments
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a{
+            width: 100px;
+            height: 100px;
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="a"></div>
+    <script>
+        // ES6允许使用箭头（=>）定义函数，箭头函数提供了一种更加简洁的函数书写方式，箭头函数多用于匿名函数的定义；
+        test=function(){
+            console.log("test普通函数")
+        }
+        test2=()=>{
+            console.log("test2箭头函数")
+        }
+        test()
+        test2()
+
+        //简写 1、当参数里面只有一个实参时候能省略括号
+        // 2、当花括号里面只有一句return语句，能直接省略花括号
+
+        // 注意事项：
+        // 1、this是静态的，this 始终指向函数声明时所在作用域下的 this 的值
+        // 可以理解为箭头函数没有自己的this，只能试用外部的this，而且这个this是固定的，call关键字不能修改this
+        // 2、箭头函数不能构造实例化对象，也不能使用arguments变量
+        test3=a=>a+a
+        console.log(test3(4))
+
+        //案例 使用箭头函数修改颜色，延时生效---->使用箭头函数的this
+        let a=document.getElementById("a")
+        a.addEventListener("click",function(){
+            setTimeout(()=>{
+                this.style.backgroundColor="pink"
+                console.log(this)
+            },1000)
+        })
+        /*
+        理解：要是使用普通函数的话，是不能直接使用this的
+        箭头函数没有自己的this，只能往前面去找this，因此this是function，function是a调用的
+        因此this是a，a中的this就有style方法了
+        要是使用普通函数，this是window---->因为谁调用的this就是谁，计时器当然是由于window调用咯
+        */
+    </script>
+</body>
+</html>

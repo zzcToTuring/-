@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //在es5的时候能使用argument接受所有的参数
+        function test(){
+            console.log(arguments)
+        }
+        test(1,2,34)
+        // 在es6中我们使用...args接受所有参数
+        function test2(...args){
+            console.log(args)
+        }
+        test2(1,2,3,4)
+        //注意 ...args只能放在最后(不然也没有什么意义是吧)，前面当然也能接受形参，args是按照数组的形式
+
+    </script>
+</body>
+</html>
