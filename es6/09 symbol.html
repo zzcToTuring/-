@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        ES6 引入了一种新的原始数据类型 Symbol，表示独一无二的值。它是JavaScript 语言的第七种数据类
+        型，是一种类似于字符串的数据类型；
+        1. Symbol 的值是唯一的，用来解决命名冲突的问题；
+        2. Symbol 值不能与其他数据进行运算；
+        3. Symbol 定义的对象属性不能使用for…in循环遍历 ，但是可以使用Reflect.ownKeys 来获取对象的所有键名；
+     -->
+</body>
+<script>
+    // //1、symbol的创建
+    let a = Symbol()
+    let b = Symbol() //a===b false 直接创建的方式进行创建
+
+    let c = Symbol("test")
+    let d = Symbol("test")// c===d flase 后面所加的可以理解成是备注
+
+    let e = Symbol.for("test")
+    let f = Symbol.for("test") //e===f true 可以理解成是对象的创建，相同的对象，所创建出来的是相同的symbol
+
+    //2、案例-1 通过symbol向对象中添加方法
+    let game = {
+        name: '俄罗斯方块',
+        up: function () { },
+        down: function () { }
+    }
+    //当项目的量过大的时候，是不能准确的知道里面是不是已经有相关的方法了，直接添加可能会存在问题
+    //方式一：借用一个对象进行添加
+    let methods={
+        up:Symbol(),
+        down:Symbol()
+    }
+    game[methods.up]=function(){
+        console.log("新添加的up方法")
+    }
+    game[methods.down]=function(){
+        console.log("新添加的down方法")
+    }
+    game[methods.up]()
+
+    //另外的一种添加方式，直接添加的方式
+    game[Symbol("up2")]=function(){
+        console.log("up2")
+    }
+    game[Symbol("down2")]=function(){
+        console.log("down2")
+    }
+    //调用，需要使用另外的方法，获得这个对象所有的symbol
+    const test=Object.getOwnPropertySymbols(game)
+    console.log(test)
+    game[test[2]]()
+    
+   
+</script>
+
+</html>

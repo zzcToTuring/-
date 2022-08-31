@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const school={
+            name:"yjdx",
+            age:20,
+            stu:[
+                "zhangsan",
+                "lisi",
+                "wangwu",
+                "zhaoliu"
+            ],
+            //数组自带，但是对象没有自带，要是需要遍历对象，可以自己写上，自定义迭代器
+            //有了这个东西，就可以直接对对象使用for of操作（数组是自带的）
+            [Symbol.iterator](){
+                let index=0
+                return{             //自定义的，需要返回一个值return
+                   next:()=>{     //返回的return里面要包含next，next要包含value（迭代的值）和done（停止迭代操作迭代操作？）  箭头函数，方便使用this
+                    if (index<this.stu.length){
+                        //没有到底，返回数组和能继续操作
+                        const result={
+                            value:this.stu[index],
+                            done:false  
+                        }
+                        index++//自增
+                        return result
+                        
+                    }
+                    else{
+                        //到底了，返回没有的undefined和不继续操作
+                        return{
+                            value:undefined,
+                            done:true
+                        }
+                    }    
+                    
+                   }
+               }
+            }
+        }
+        // //现在提出需求，使用迭代器的操作，展示school中的stu
+        // //方式一，使用forEach操作
+        // school.stu.forEach((value,index) => {
+        //     console.log(value)
+        // });
+        // console.log("---------------")
+        // //这样的方式虽然能够遍历，但是因为他本身就是数组，自带迭代器
+        // for(temp of school.stu){
+        //     console.log(temp)
+        // }
+        // //使用自定义迭代器，即使用（for of schol）
+        for(temp of school){
+            console.log(temp)
+        }
+    </script>
+</body>
+</html>

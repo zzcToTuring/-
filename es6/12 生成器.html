@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 生成器函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同
+        function* test() {
+            console.log("test1上")
+            yield "test1"
+            console.log("test1下")
+            yield "test2"
+            yield "test3"
+        }
+        // yield是用来区分代码块的作用 一般的函数直接全部执行，而生成器函数根据yield进行分离
+        // 分离成一块一块的东西，通过next进行执行 执行的范围是从最上到第一个yield的位置
+        let temp = test()
+        console.log(temp.next())
+        console.log(temp.next())
+        console.log(temp.next())
+        console.log(temp.next())
+        console.log("---------------")
+        //同时也能使用for of 遍历
+        for (let temp of test()) {
+            console.log(temp)
+        }
+
+        //应用 异步操作--->设置一个定时器，一秒后输出111，然后两秒后输出222，三秒后输出333
+        // 无限套娃操作，显得太烦
+        /*
+        setTimeout(() => {
+            console.log("111")
+            setTimeout(() => {
+                console.log("222")
+                setTimeout(() => {
+                    console.log("333")
+                }, 3000);
+            }, 2000);
+        }, 1000);
+        */
+       // 虽然代码相比有点多，但是相比于无限套娃的操作
+       // 这个操作就显得更加有条理一点
+        one=function(){
+            setTimeout(() => {
+                console.log(111)
+                bbb.next()//调用完成之后，自己调用下一个代码
+            }, 1000);
+        }
+        two=function(){
+            setTimeout(() => {
+                console.log(222)
+                bbb.next()
+            }, 2000);
+        }
+        three=function(){
+            setTimeout(() => {
+                console.log(333)
+            }, 3000);
+        }
+        function * dingshiqi(){
+            yield one()
+            yield two()
+            yield three()
+        }
+        let bbb=dingshiqi()
+        bbb.next()
+
+
+
+    </script>
+</body>
+
+</html>

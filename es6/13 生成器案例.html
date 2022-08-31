@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 每隔一秒，一次输出 用户数据、订单数据、商品数据
+        // 数据使用next（“xxx”）进行传入
+        // tip：next中也是能够传入数据的 传入的参数作为第一条(上一条)语句的返回结果
+        function getUsers() {
+            setTimeout(() => {
+                // 第二次调用next，传入参数，作为第一个的返回值
+                iterator.next("用户数据"); 
+            }, 1000);
+        }
+        function getOrders() {
+            setTimeout(() => {
+                iterator.next("订单数据"); 
+            }, 1000);
+        }
+        function getGoods() {
+            setTimeout(() => {
+                iterator.next("商品数据"); 
+            }, 1000);
+        }
+        function* gen() {
+            let users = yield getUsers();//异步操作，user能接受到yield传入的值，对他后面就是对他进行输出
+            console.log(users);
+            let orders = yield getOrders();
+            console.log(orders);
+            let goods = yield getGoods();
+            console.log(goods); // 这种操作有点秀啊！
+        }
+        let iterator = gen();
+        iterator.next();
+        // tip:需要使用异步操作，如果去除定时器会报错（没有定时器就是属于普通的操作，不算异步），理解原理即可
+    </script>
+</body>
+
+</html>
