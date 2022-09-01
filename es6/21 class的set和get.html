@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 和vue的监视属性类似，当属性被访问的时候，执行get，当值被修改的话，执行set
+        phone=class{
+            //price=666
+            constructor(brand,price){
+                 this.brand=brand
+                 this.price=price
+            }
+            // get price(){
+            //     console.log("price被读取了")
+            //     return 111
+            //  // return的值为读取的值，如果没有return，则返回underfined
+                
+                
+            // }
+            // set price(value){
+            //     console.log("price被修改了，value:",value)
+                
+            // }
+        }
+        let sanxin=new  phone("sanxin",9999)
+        console.log(sanxin.price)
+        console.log(phone.prototype)
+
+    </script>
+</body>
+</html>

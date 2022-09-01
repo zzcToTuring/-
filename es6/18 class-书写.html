@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //es5书写相关的
+        // phone=function(brand,price){
+        //     this.brand=brand
+        //     this.price=price
+        // }
+        // phone.prototype.call=function(){
+        //     console.log("我可以打电话")
+        // }
+        // let HW=new phone("huawei",9999)
+        // HW.call()
+        // console.log(HW)
+
+        //ES6的只是对其的要求更加规范，更加适用于面向对象的编程
+        phone=class{
+            // 构造函数
+            constructor(brand,price){
+                this.brand=brand
+                this.price=price
+            }
+            // 函数的定义，必须要用这样的写法
+            call(){
+                console.log("我能打电话")
+            }
+        }
+        let HW=new phone("华为",9999)
+        HW.call()
+    </script>
+</body>
+</html>

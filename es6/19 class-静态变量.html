@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //ES5的静态变量
+        // phone=function(){
+        // }
+        // phone.name="phone"
+        // phone.show=function(){
+        //     console.log("can call")
+        // }
+        // phone.prototype.name="手机"//实例对象和函数对象的属性是不相通的
+        // phone.prototype.show=function(){
+        //     console.log("我能打电话")
+        // }
+        // let xm=new phone()
+        // console.log(xm.name)
+        // xm.show()
+        // console.log(phone.name)
+        // phone.show()
+
+        //es6中的静态变量
+        phone=class{
+            static name="手机"  //static标注的是class不属于实例对象
+            name="shouji"   //要是没有用static标注的话
+            change(){
+                console.log("i can call")
+            }
+            static change(){
+                console.log("我能打电话")
+            }
+        }
+        let njy=new phone()
+        console.log(njy.name)
+        console.log(phone.name)
+        njy.change()
+        phone.change()
+
+    </script>
+</body>
+</html>

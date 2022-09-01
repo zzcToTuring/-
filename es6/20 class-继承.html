@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //es5的继承
+        // // 父类
+        // phone=function(brand,price){
+        //     this.brand=brand
+        //     this.price=price
+        // }
+        // phone.prototype.call=function(){
+        //     console.log("我能打电话")
+        // }
+        // // 子类
+        // smartphone=function(brand,price,size){
+        //     this.brand=brand
+        //     this.price=price
+        //     this.size=size
+        // }
+        // //设置构造函数的原型 说明父类和子类的关系
+        // smartphone.prototype=new phone;
+        // //声明子类的方法
+        // smartphone.prototype.photo=function(){
+        //     console.log("我能拍照")
+        // }
+        // let chuizi=new smartphone("锤子",2499,6.5)
+        // chuizi.call()
+        // chuizi.photo()
+
+        //es6的继承 es5也能完成，但是es6的话更适合面向对象编程
+        phone = class {
+            constructor(brand, price){
+                this.brand=brand
+                this.price=price
+            }
+            call(){
+                console.log("我能打电话")
+            }
+        }
+        smartphone=class extends phone{
+            constructor(brand,price,size){
+                super(brand,price)
+                this.size=size
+            }
+            photo(){
+                console.log("我能拍照")
+            }
+            call() {
+                console.log("我能打视频电话")
+            }
+            
+        }
+        let chuizi=new smartphone("锤子", 2499, 6.5)
+        console.log(chuizi.price)
+        chuizi.call()
+        chuizi.photo()
+    </script>
+</body>
+
+</html>
