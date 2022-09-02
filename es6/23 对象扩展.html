@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象的扩展
+        // 1、object.is 严格判断两个值是否相等，与===基本一致（+0 NaN）
+        console.log(Object.is(120, 120))
+        console.log(Object.is(NaN, NaN))
+        console.log(NaN === NaN)
+
+        //2、object.assign 对象的合并
+        //用后面的test2覆盖test1，要是有的话就是覆盖
+        const test1 = {
+            name: "zhansgan",
+            age: 24,
+            pass: "root",
+            only: "这是test1的属性"
+        }
+        const test2 = {
+            name: "lisi",
+            age: 18,
+            pass: "1234"
+
+        }
+        console.log(Object.assign(test1, test2))
+
+        // 设置对象的原型
+        //3. __proto__、setPrototypeOf、 getPrototypeOf 可以直接设置对象的原型；
+        const school = {
+            name: "尚硅谷"
+        }
+        const cities = {
+            xiaoqu: ['北京', '上海', '深圳']
+        }
+        // 并不建议这么做
+        Object.setPrototypeOf(school, cities);
+        console.log(Object.getPrototypeOf(school));
+        console.log(school);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+模块功能主要由两个命令构成：export 和 import；
+export 命令用于规定模块的对外接口（导出模块）；
+import 命令用于输入其他模块提供的功能（导入模块）
+
+-------------------export--------------
+1、简单使用、逐个导出
+m1.js文件夹中
+    export let school = "尚硅谷";
+    export function teach(){
+    console.log("我们可以教你开发技术！");
+    }
+
+2、统一导出
+    let school="尚硅谷"
+    function teach(){
+        console.log("我们可以帮你找工作)
+    }
+    export {school,teach}
+3、默认导出
+    export default{
+        school : "尚硅谷",
+        change : function(){
+            console.log("我们可以帮你改变人生！");
+        }
+    }
+
+--------------import---------------
+1、通用引入
+    import *as m1 from "xxx"
+
+2、解构赋值形式
+    import {school,teach} from "xxx"
+    tip:要是形式重复了的话，可以使用as进行化名
+        import {school as sch,teach}from "xxx"
+3、导入默认导出的模块，必须使用别名
+    import {default as one} from "xxx"
+
+    // 引入o.js模块内容
+    import * as o from "./js/o.js";
+    console.log(o);
+    // 注意这里调用方法的时候需要加上default
+    console.log(o.default.school);
+    o.default.change();
