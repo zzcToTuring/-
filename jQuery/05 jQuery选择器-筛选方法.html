@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<!--tip:这些都是方法 需要打上括号 之前的都是选择器 直接在里面写上就行-->
+<body>
+<div class="yeye">
+  <div class="father">
+    father
+    <div class="son">儿子</div>
+  </div>
+</div>
+
+<ol>
+  <li>我是ol 的li</li>
+  <li>我是ol 的li</li>
+  <li class="item">我是ol 的li</li>
+  <li>我是ol 的li</li>
+  <li>我是ol 的li</li>
+  <li>我是ol 的li</li>
+</ol>
+<ul>
+  <li>我是ol 的li</li>
+  <li>我是ol 的li</li>
+  <li>我是ol 的li</li>
+  <li>我是ol 的li</li>
+  <li>我是ol 的li</li>
+  <li>我是ol 的li</li>
+</ul>
+<div class="current">俺有current</div>
+<div>俺木有current</div>
+</body>
+<script>
+  $(function (){
+  //1、parent() 查找父级 最近一级的元素的爸爸
+    console.log($(".son").parent())
+   //2、children()  查找子级 相当于(ul>li)子类选择器 亲儿子
+   //3、find()  查找里面所有的孩子 包括儿子和孙子 相当于(ul li)后代选择器
+  //4、siblings 查找兄弟结点 不包括自己
+  })
+</script>
+</html>

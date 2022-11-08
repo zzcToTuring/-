@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<style>
+  div {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+  }
+</style>
+<body>
+<div></div>
+<script>
+  //1、DOM对象：用原生js获取的对象
+  let d_div=document.querySelector("div")
+
+  //2、jQuery对象：使用jq获得过来的对象
+  let j_div=$("div")
+  //3、区别：DOM对象只能使用DOM的一些方法，jQuery只能使用jQuery的一些方法，jQuery要使用DOM方法需要将jQuery转化成DOM，反之亦然
+
+  //4、jQuery转化为DOM--->本质就是伪数组的转化，使用数组或者get方法即可
+  let div_1=j_div[0]
+  let div_2=j_div.get(0)
+
+  //5、DOM对象转化为jQuery对象
+  let div_3=$(d_div)
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+</style>
+
+<body>
+<script>
+//1、等页面的DOM元素加载完成再去执行js代码
+// $(document).ready(function (){
+//     $("div").hide();
+// })
+
+//2、与上面那种原理相同，只不过是不用的写法而已
+$(function (){
+    $("div").hide()
+})
+</script>
+<!--
+1、jQuery只是为了简化原生写法的一些操作，其他的理解与原生js大致相同
+2、$只是一种简写，也能写成jQuery
+-->
+<div></div>
+</body>
+</html>

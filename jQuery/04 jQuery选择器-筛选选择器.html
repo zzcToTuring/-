@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body>
+<ul>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+</ul>
+<ol>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+  <li>多个里面筛选几个</li>
+</ol>
+<!--  前置知识-隐式迭代
+遍历内部DOM元素的过程就叫隐式迭代
+比如$("div").css("color","pink") 会帮我们把所有能匹配到的内容进行遍历，不需要按照传统的方式写for循环
+-->
+<script>
+ $(function () {
+   //:first  获取第一个元素 (last同理)--->ul 第一个li标签改成红色
+   $("ul li:first").css("color", "red")
+   //:eq(index) 获取索引号为index的元素 --->ul 第3个li标签改成蓝色
+   $("ul li:eq(2)").css("color","blue")
+   //:odd 获取索引号为奇数的元素（even获取索引号为偶数的元素）--->ol改成红黄交替
+   $("ol li:odd").css("color","yellow")
+   $("ol li:even").css("color","red")
+ })
+</script>
+</body>
+</html>
