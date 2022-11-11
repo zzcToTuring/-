@@ -1,0 +1,64 @@
+1-1、显示效果
+  show（[speed,[easing],[fn]]）
+参数
+    1、参数都可以省略
+    2、speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+    3、easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+    4、fn: 回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+1-2、隐藏效果
+  hide([speed,[easing],[fn]])
+参数同上
+
+1-3、切换（显示隐藏）效果  （第一次显示第二次隐藏）
+  toggle([speed,[easing],[fn]])
+参数同上
+
+2-1 下滑效果（下滑展示）
+  slideDown([speed,[easing],[fn]])
+参数同上
+
+2-2 上滑效果（上滑隐藏）
+  slideUp([speed,[easing],[fn]])
+参数同上
+
+2-3 切换（上下滑动）效果
+  slideToggle([speed,[easing],[fn]])
+参数同上
+
+3-1 淡入效果
+  fadeIn([speed,[easing],[fn]])
+参数同上
+
+3-2 淡出效果
+  fadeOut([speed,[easing],[fn]])
+参数同上
+
+3-3 切换（淡入淡出）效果
+  fadeToggle([speed,[easing],[fn]])
+参数同上
+
+3-4 切换（淡入淡出）效果+指定不透明度
+  fadeTo([[speed],opacity,[easing],[fn]])
+参数：
+    opacity 透明度必须写，取值 0~1 之间。
+    其他同上
+
+4、自定义动画
+    animate(params,[speed],[easing],[fn])
+  参数：
+  params: 想要更改的样式属性，以对象形式传递，必须写。 属性名可以不用带引号， 如果是复合属性则需要采取驼峰命名法 borderLeft。其余参数都可以省略。
+  其他同上
+
+5、事件切换
+    hover([over],out)
+参数：
+    （1）over:鼠标移到元素上要触发的函数（相当于mouseenter）
+    （2）out:鼠标移出元素要触发的函数（相当于mouseleave）
+    （3）如果只写一个函数，则鼠标经过和离开都会触发它
+
+特殊：动画队列
+    动画或者效果一旦触发就会执行，如果多次触发，就造成多个动画或者效果排队执行。
+    stop（）方法用于停止动画或者效果--->要写在动画或效果的前面，相当于停止上一次的动画
+
+

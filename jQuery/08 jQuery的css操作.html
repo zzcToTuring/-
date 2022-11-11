@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<style>
+  .test1{
+    width: 100px;
+    height: 200px;
+    background-color: green;
+  }
+  .test2{
+    width: 300px;
+    height: 300px;
+    background-color: brown;
+  }
+</style>
+<body>
+<button>转化</button>
+<div class="test1">
+
+</div>
+<div></div>
+</body>
+<script>
+  $(function (){
+    //------------------直接添加css的一些方式-------------------------
+    //1、获取css的一些属性值
+    console.log($(".test1").css("backgroundColor"))
+    //2、直接添加css 之前也使用过--->添加一种
+    // $(".test1").css("backgroundColor","pink")
+    //3、添加多种css，按照对象的方式
+    $(".test1").css({
+      "width":"400px",
+      "height":"200"
+    })
+    //-----------------类名的一些操作-------------------
+    //4、添加类名
+    $("div").eq(1).addClass("test2")
+    //5、移除类名
+    $("div").eq(1).removeClass("test2")
+    //6、转化（有这个类名就移除，没有这个类名就添加）
+    $("button").click(function (){
+      console.log("点击")
+      $("div").eq(1).toggleClass("test2")
+    })
+  })
+</script>
+</html>

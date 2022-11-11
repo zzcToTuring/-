@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+<!-- 一个简单的案例理解jQuery的排他思想，隐式迭代... -->
+</head>
+<body>
+<div>
+  <button>test1</button>
+  <button>test2</button>
+  <button>test3</button>
+  <button>test4</button>
+  <button>test5</button>
+</div>
+</body>
+<script>
+  $(function (){
+    //给每个按钮都绑定了点击事件
+    $("button").click(function (){
+      //当前的按钮添加颜色
+      $(this).css("color","yellow")
+        console.log("当前被点击的是：",$(this).index()+1)
+      //其他的按钮--->他的同级兄弟按钮
+      $(this).siblings("button").css("color","black")
+    })
+  })
+</script>
+</html>
