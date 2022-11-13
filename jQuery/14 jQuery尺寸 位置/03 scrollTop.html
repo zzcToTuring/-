@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/jquery.min.js"></script>
+</head>
+<style>
+  body {
+    height: 2000px;
+  }
+
+  .back {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    right: 30px;
+    bottom: 100px;
+    display: none;
+  }
+
+  .container {
+    width: 900px;
+    height: 500px;
+    background-color: skyblue;
+    margin: 400px auto;
+  }
+</style>
+<body>
+<div class="back">返回顶部</div>
+<div class="container"></div>
+</body>
+<script>
+  //效果---->当滚动到一定的地方弹出“返回顶部选项”，使用jQuery的scrollTop完成
+$(function (){
+    $(document).scrollTop(100);//设置刚进入页面时，距离顶部100px
+    var boxTop = $(".container").offset().top;
+    //当进行滚动时
+    $(window).scroll(function() {
+      console.log($(document).scrollTop());
+      //达到container 展示返回顶部，否则隐藏返回顶部
+      if ($(document).scrollTop() >= boxTop) {
+        $(".back").fadeIn();
+      } else {
+        $(".back").fadeOut();
+      }
+    });
+    // 返回顶部
+    $(".back").click(function() {
+     //使用自定义动画的方式展示
+      $("body, html").stop().animate({
+        scrollTop: 0
+      });
+      //----------注意点---------
+      // $(document).stop().animate({
+      //     scrollTop: 0
+      // }); 不能是文档而是 html和body元素做动画
+    })
+  })
+</script>
+</html>

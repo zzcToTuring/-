@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+</body>
+<script>
+
+  let c=["red","yellow","pink"]
+  //1、使用each进行遍历 注意两个遍历的参数 index表示索引号，item表示遍历的对象，是DOM，需要使用jQuery方法需要转化
+  $(function (){
+    $("div").each(function (index,item){
+      $(item).css("color",c[index])
+    })
+  })
+  //2、使用$each方法
+  $.each(c,function (index,item){
+    console.log(index,item)
+  })
+  console.log("---------------------")
+  $.each({
+    name:'zc',
+    age:18
+  },function (index,item){
+    console.log(index,item)
+  })
+  //区别：方法一一般用于遍历元素，方法二一般用于遍历数据，遍历对象时，参数一为key，参数二维value
+</script>
+</html>

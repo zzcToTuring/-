@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body>
+<input placeholder="test">
+<div data="自定义属性" data-index="2">
+  div标签
+</div>
+<span>span标签</span>
+</body>
+<script>
+  $(function (){
+    //1、设置or获取固有属性 prop
+    console.log($("input").prop("placeholder"))
+    $("input").prop("placeholder","更改后....")
+
+    //2、元素自定义的属性 查询or更改 attr
+    console.log($("div").attr("data"))
+    $("div").attr("data","自定义属性-change")
+    console.log($("div").attr("data"))
+    console.log($("div").attr("data-index"))
+
+    //3、数据缓存data 数据是存放在元素的内存里面--->了解
+    //在DOM里面是找不到的，他是放在内存中的
+    $("span").data("name","zc")
+    console.log($("span").data("name"))
+    //特殊--->针对于HTML新增的data-xxx类型，可以省略
+    console.log($("div").data("index"))
+  })
+</script>
+</html>

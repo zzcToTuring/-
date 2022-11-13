@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body>
+<div>第一个div</div>
+<div>第二个div</div>
+<div>第三个div</div>
+<ol>
+  <li>li标签1</li>
+  <li>li标签2</li>
+  <li>li标签3</li>
+</ol>
+</body>
+<script>
+  //1、创建元素
+  let li_1 =$("<li>我是新增加的元素1</li>")
+  let li_2 =$("<li>我是新增加的元素2</li>")
+  let li_3 =$("<li>我是新增加的元素3</li>")
+  let div_1=$("<div>新增加的div标签1</div>")
+  let div_2=$("<div>新增加的div标签2</div>")
+  //2、内部添加
+  $("ol").append(li_1); //内部添加并且放置在内容的最后
+  $("ol").prepend(li_2);//内部添加并且放置在内容的最后
+
+  //3、外部添加
+  $("div:last").after(div_1)
+  $("div:first").before(div_2)
+
+  //指定到任意位置可以使用这样的方式
+  $("ol li").eq(1).after(li_3)
+
+  //4、删除元素
+  //$("ol").remove() //可以删除匹配的元素 自杀
+  //$("ol").empty() //可以删除匹配元素里面的子节点 孩子
+  $("ol").html("") //可以删除匹配的元素里面的子节点 孩子
+</script>
+</html>

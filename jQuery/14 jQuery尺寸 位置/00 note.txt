@@ -1,0 +1,22 @@
+1、jQuery 尺寸
+    width()/height()   取得匹配元素宽度和高度值 只计算width/height
+    innerWidth()/innerHeight()  取得匹配元素宽度和高度值 包括padding
+    outerWidth([true])/outerHeight([true])  取得匹配元素宽度和高度值 包括padding border  [margin]
+
+参数说明：
+    若括号为空，表示是获取相关的值；否则则为修改相关的值
+
+2-1 jQuery的位置 offset() 设置或获取元素的偏移
+    ① offset() 方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系。
+    ② 该方法有2个属性 left、top 。offset().top 用于获取距离文档顶部的距离，offset().left 用于获取距离文档左侧的距离。
+    ③ 可以设置元素的偏移：offset({ top: 10, left: 30 })
+
+2-2 jQuery位置 position  获取元素偏移
+    ① position() 方法用于返回被选元素相对于带有定位的父级偏移坐标，如果父级都没有定位，则以文档为准。
+    ② 该方法有2个属性 left、top。position().top 用于获取距离定位父级顶部的距离，position().left 用于获取距离定位父级左侧的距离。
+    ③ 该方法只能获取，不能设置偏移量
+
+2-3 jQuery位置  scrollTop()/scrollLeft() 设置或获取元素被卷去的头部和左侧
+    ① scrollTop() 方法设置或返回被选元素被卷去的头部。
+    ② 不跟参数是获取，参数为不带单位的数字则是设置被卷去的头部。
+

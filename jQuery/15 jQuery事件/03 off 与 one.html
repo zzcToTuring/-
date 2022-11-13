@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/jquery.min.js"></script>
+</head>
+<style>
+  div {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+  }
+</style>
+<body>
+<div></div>
+<ul>
+  <li>LI-1</li>
+  <li>LI-2</li>
+  <li>LI-3</li>
+</ul>
+<button>只能点击一次</button>
+</body>
+<script>
+  $(function (){
+    $("div").on({
+      click: function() {
+        console.log("我点击了");
+      },
+      mouseover: function() {
+        console.log('我鼠标经过了');
+      }
+    });
+    $("ul").on("click", "li", function() {
+      alert(11);
+    });
+    // 1. 事件解绑 off
+    // $("div").off();  // 这个是解除了div身上的所有事件
+    // $("div").off("click"); // 这个是解除了div身上的点击事件
+    // $("ul").off("click", "li");
+
+    //one 绑定事件
+    $("button").one("click",function (){
+      window.alert("just alert once")
+    })
+  })
+</script>
+</html>
