@@ -1,0 +1,19 @@
+1、概述
+    CSS3 是 CSS2 的升级版本，它在 CSS2 的基础上，新增了很多强大的新功能，从而解决一些实际面临的问题。
+    CSS3 在未来会按照模块化的方式去发展，将功能分为若干个模块去解决，参考链接：https://www.w3.org/Style/CSS/current-work.html
+
+2、私有前缀
+    例如在border-radius属性提出时，在Chrome浏览器上使用方式为：
+        -webkit-border-radius: 20px;
+    原因：W3C提出的某个CSS特性，在被浏览器正式支持之前，浏览器厂商会根据自身浏览器内核，使用私有前缀进行测试
+    当测试通过(很多人使用)，则在浏览器正式支持该css特性后，就不需要私有前缀
+
+    查询 CSS3 兼容性的网站：https://caniuse.com/
+    常用浏览器的私有前缀：
+        Chrome 浏览器： -webkit
+        Safari 浏览器： -webkit
+        Firefox 浏览器： -moz
+        Edge 浏览器： -webkit
+
+    提醒：
+        私有前缀了解即可，不用使用，即使即便是为了老浏览器而加前缀，我们也可以借助现代的构建工具，去帮我们添加私有前缀

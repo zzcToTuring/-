@@ -1,0 +1,8 @@
+一、css字体属性
+     font-family:"微软雅黑" 定义文本的字体系列
+     font-size: 20px  定义字体大小
+     font-weight: bold;或400 700 粗细
+     font-style: normal|italic 文本的风格 正常|倾斜
+二、文本属性
+    见图 文本属性.png
+
