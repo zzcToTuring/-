@@ -1,0 +1,58 @@
+<!--
+  使用 box-shadow 属性为盒子添加阴影
+  语法：box-shadow: h-shadow v-shadow blur spread color inset;
+        h-shadow 水平阴影的位置，必须填写，可以为负值
+        v-shadow 垂直阴影的位置，必须填写，可以为负值
+        blur 可选，模糊距离
+        spread 可选，阴影的外延值
+        color 可选，阴影的颜色
+        inset 可选，将外部阴影改为内部阴影
+  写法：
+    /* 写两个值，含义：水平位置、垂直位置 */
+    box-shadow: 10px 10px;
+
+    /* 写三个值，含义：水平位置、垂直位置、颜色 */
+    box-shadow: 10px 10px red;
+
+    /* 写三个值，含义：水平位置、垂直位置、模糊值 */
+    box-shadow: 10px 10px 10px;
+
+    /* 写四个值，含义：水平位置、垂直位置、模糊值、颜色 */
+    box-shadow: 10px 10px 10px red;
+
+    /* 写五个值，含义：水平位置、垂直位置、模糊值、外延值、颜色 */
+    box-shadow: 10px 10px 10px 10px blue;
+
+    /* 写六个值，含义：水平位置、垂直位置、模糊值、外延值、颜色、内阴影 */
+    box-shadow: 10px 10px 20px 3px blue inset;
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+      .box{
+        width: 400px;
+        height: 400px;
+        background-color: cornflowerblue;
+        margin: 100px auto 0;
+        font-size: 40px;
+        /* 添加渐变效果 */
+        position: relative;
+        top:0;
+        left: 0;
+        transition: 0.4s linear all;
+      }
+      .box:hover{
+        box-shadow: 0 0 10px 20px black;
+        top: -10px;
+      }
+  </style>
+</head>
+<body>
+    <div class="box">
+      hello world
+    </div>
+</body>
+</html>

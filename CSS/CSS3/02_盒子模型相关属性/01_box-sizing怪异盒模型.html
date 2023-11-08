@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<!--
+ box-sizing 属性可以设置盒模型的两种类型
+    content-box：width 和 height 设置的是盒子内容区的大小。（默认值）
+    border-box ：width 和 height 设置的是盒子总大小。（怪异盒模型）
+
+ 使用怪异盒模型能确保盒子的总大小，保证不会越界
+-->
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: cornflowerblue;
+        margin: 20px;
+        border: 10px solid black;
+        padding: 10px;
+        font-size: 20px;
+        line-height: 200px;
+        text-align: center;
+    }
+    .box2{
+        box-sizing: border-box;
+    }
+</style>
+<body>
+    <div class="box box1">
+        普通盒模型
+    </div>
+    <div class="box box2">
+        怪异盒模型
+    </div>
+</body>
+</html>
