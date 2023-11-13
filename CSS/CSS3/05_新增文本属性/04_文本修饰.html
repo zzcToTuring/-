@@ -1,0 +1,37 @@
+<!--
+CSS3 升级了 text-decoration 属性，让其变成了复合属性。
+text-decoration: text-decoration-line || text-decoration-style || text-decoration color
+  text-decoration-line 设置文本装饰线的位置
+    none ： 指定文字无装饰 （默认值）
+    underline ： 指定文字的装饰是下划线
+    overline ： 指定文字的装饰是上划线
+    line-through ： 指定文字的装饰是贯穿线
+  text-decoration-style 文本装饰线条的形状
+    solid ： 实线 （默认）
+    double ： 双线
+    dotted ： 点状线条
+    dashed ： 虚线
+    wavy ： 波浪线
+text-decoration-color 文本装饰线条的颜色
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      /*text-decoration-color: red;*/
+      /*text-decoration-line: underline;*/
+      /*text-decoration-style: dotted;*/
+      /*复合属性*/
+      text-decoration: red underline dotted;
+    }
+  </style>
+</head>
+<body>
+<div>
+  Lorem ipsum dolor sit.
+</div>
+</body>
+</html>

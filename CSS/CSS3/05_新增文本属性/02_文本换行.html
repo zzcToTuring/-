@@ -1,0 +1,33 @@
+<!--
+使用white-space属性设置文本换行方式
+可选值:
+  normal 文本超出边界自动换行，文本中的换行被浏览器识别为一个空格。（默认值）
+  pre 原样输出，与 pre 标签的效果相同。
+  pre-wrap 在 pre 效果的基础上，超出元素边界自动换行。
+  pre-line在 pre 效果的基础上，超出元素边界自动换行，且只识别文本中的换行，空格会忽略。
+  nowrap 强制不换行
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      width: 400px;
+      border: 1px skyblue solid;
+      margin: 20px auto;
+      /*设置换行方式*/
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut
+    consequuntur earum esse excepturi id molestias numquam praesentium, recusandae
+    reiciendis soluta tempore veritatis? Consequuntur fuga hic ipsa suscipit, totam ut?</span>
+</div>
+</body>
+</html>

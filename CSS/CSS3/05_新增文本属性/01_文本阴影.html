@@ -1,0 +1,37 @@
+<!--
+  使用text-shadow属性给文本添加阴影
+  语法：
+    text-shadow: h-shadow v-shadow blur color;
+      h-shadow 必需写，水平阴影的位置。允许负值。
+      v-shadow 必需写，垂直阴影的位置。允许负值。
+      blur 可选，模糊的距离。
+      color 可选，阴影的颜色
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
+    h1{
+      font-weight: bold;
+      font-size: 100px;
+      color: white;
+      text-align: center;
+      /* text-shadow: 3px 3px; */
+      /* text-shadow: 3px 3px red; */
+      /* text-shadow: 3px 3px 10px red; */
+      /* text-shadow: 0px 0px 15px black; */
+      text-shadow: 10px 0 4px darkred;
+    }
+  </style>
+</head>
+<body>
+<h1>红浪漫洗浴欢迎您的光临</h1>
+</body>
+</html>

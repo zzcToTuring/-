@@ -1,0 +1,40 @@
+<!--
+边框外轮廓：
+  在边框之外还附带轮廓，若产生覆盖不会受到其他盒子的影响（了解即可）
+outline-width ：外轮廓的宽度。
+outline-color ：外轮廓的颜色。
+outline-style ：外轮廓的风格。
+  none ： 无轮廓
+  dotted ： 点状轮廓
+  dashed ： 虚线轮廓
+  solid ： 实线轮廓
+  double ： 双线轮廓
+outline-offset 设置外轮廓与边框的距离，正负值都可以设置。
+复合属性
+  outline:50px solid blue;
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      border: 20px solid red;
+      /*20px表示外边框的宽度*/
+      outline: cornflowerblue solid 20px;
+      /*20px表示外边框距离盒子的长度*/
+      outline-offset: 20px;
+
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis delectus fuga itaque laborum tempore! Debitis est iusto nesciunt quia ullam.
+</p>
+</body>
+</html>

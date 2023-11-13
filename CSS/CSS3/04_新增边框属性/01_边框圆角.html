@@ -1,0 +1,29 @@
+<!--
+border-radius属性可以将盒子变为圆角
+1、同时设置4个角为圆角：border-radius:10px;
+2、分别设置：
+  border-top-left-radius：设置左上角圆角半径： 一个值是正圆半径，两个值分别是椭圆的 x 半径、 y 半径。
+  （bottom、top、left、right同理）
+3、分开设置每个角的圆角，综合写法
+  border-radius: 左上角x 右上角x 右下角x 左下角x / 左上y 右上y 右下y 左下y
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+      margin: 20px auto;
+      /*两个值表示为椭圆的X Y 属性*/
+      border-top-left-radius: 20px 10px;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

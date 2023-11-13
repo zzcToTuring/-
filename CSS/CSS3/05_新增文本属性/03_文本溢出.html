@@ -1,0 +1,37 @@
+<!--
+文本溢出
+  text-overflow：
+      clip 当内联内容溢出时，将溢出部分裁切掉。 （默认值）
+      ellipsis 当内联内容溢出块容器时，将溢出部分替换为 ... 。
+ 一般使用js完成此操作
+ 当文本超出限制的时候，要设置不换行，否则会自动换行，没有文本溢出效果
+ 同时还需要加上overflow: hidden; 隐藏超出部分
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+   ul{
+     width: 200px;
+     font-size: 30px;
+     list-style: none;
+     border: 1px solid black;
+   }
+   li{
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+   }
+  </style>
+</head>
+<body>
+<ul>
+  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ipsam.</li>
+  <li>Lorem ipsum dolor sit.</li>
+  <li>Lorem ipsum dolor sit amet.</li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aliquid, corporis excepturi fugiat provident temporibus! Aliquam mollitia repudiandae temporibus!</li>
+</ul>
+</body>
+</html>

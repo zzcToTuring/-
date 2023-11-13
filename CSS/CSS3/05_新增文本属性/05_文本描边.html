@@ -1,0 +1,34 @@
+<!--
+文本描边(仅webkit内核浏览器内核支持)
+    -webkit-text-stroke-width ：设置文字描边的宽度，写长度值。
+    -webkit-text-stroke-color ：设置文字描边的颜色，写颜色值。
+    -webkit-text-stroke ：复合属性，设置文字描边宽度和颜色。
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    h1{
+      font-size: 80px;
+      color: transparent;
+      -webkit-text-stroke-width: 3px;
+      -webkit-text-stroke-color: red;
+    }
+
+    h2{
+      font-size: 80px;
+      color: transparent;
+      text-shadow: 0 0 2px red;
+    }
+  </style>
+</head>
+<body>
+
+</body>
+<h1>红浪漫洗浴欢迎您的光临</h1>
+<!--渐变与文本描边还是存在着一些区别的-->
+<h2>红浪漫洗浴欢迎您的光临</h2>
+</html>
