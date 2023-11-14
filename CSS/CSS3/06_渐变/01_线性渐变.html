@@ -1,0 +1,67 @@
+<!--
+渐变的本质，是一种背景图
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      float: left;
+      margin-left:50px;
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    /*看似有一条线，从上到下，颜色的渐变的*/
+    .box1{
+      background-image: linear-gradient(red,yellowgreen,green);
+    }
+
+    /*有一条往左的线，颜色的变化依次为 红 橙 蓝*/
+    .box2{
+      background-image: linear-gradient(to left,red,orange,skyblue);
+    }
+
+    /*与水平的夹角(旋转了一定的角度)*/
+    .box3{
+      background-image: linear-gradient(20deg,black,red,yellowgreen);
+    }
+
+
+    /*
+    理解：
+        从0-50px之间要是红色渐变，但是红色之前没有其他颜色，所以该阶段的颜色为：纯红
+        从50-150之间要从红色渐变到黄色，所以该阶段的颜色为：红黄渐变
+        在150-200之间同理，颜色为：黄蓝渐变
+        在200-300之间，从蓝色渐变到其他颜色，但蓝色已经是最后一个颜色了，不用继续渐变，因此该阶段的颜色为：纯蓝
+    */
+    .box4{
+        background-image: linear-gradient(red 50px,yellowgreen 150px,blue 200px);
+    }
+
+    .box5{
+        background-image: linear-gradient(20deg,red ,yellowgreen ,green );
+        font-size: 80px;
+        text-align: center;
+        font-weight: bold;
+        color: transparent;
+        -webkit-background-clip: text;;
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="box box1">默认情况（从上到下）</div>
+<div class="box box2">通过调整关键字来改变渐变的方向</div>
+<div class="box box3">通过角度调整线性渐变渐变的方向</div>
+<div class="box box4">调整线性渐变的区域</div>
+<div class="box box5">demo</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            float: left;
+            margin-left: 50px;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        /*默认写法*/
+        .box1{
+            background-image:radial-gradient(red,yellowgreen,green) ;
+        }
+        /*通过关键字调整径向渐变的圆心*/
+        .box2{
+            background-image: radial-gradient(at right top ,red,yellow,green);
+        }
+
+        /*  调整像素值,指定圆心位置  */
+        .box3{
+            background-image: radial-gradient(at 200px 200px ,red,yellow,green);
+        }
+
+        /*指定径向渐变的为圆，并按照盒子的宽高自适应*/
+        .box4{
+            background-image: radial-gradient(circle,red,yellow,green);
+        }
+
+        /*  调整像素值，指定○  */
+        .box5{
+            background-image: radial-gradient(100px 100px,red,yellow,green);
+        }
+
+        /* 与01线性渐变同理，调整径向渐变的区域 */
+        .box6{
+            background-image: radial-gradient(red 50px,yellow 100px,green 150px);
+        }
+
+        /*综合写法，这些能整合成一种写法*/
+        /*100 50 指○的大小（椭圆）  100 100指圆心的位置*/
+        .box7{
+            background-image: radial-gradient(100px 50px at 100px 100px,red 50px ,yellow 100px ,green 150px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">默认情况</div>
+    <div class="box box2">通过关键词调整径向渐变圆的圆心</div>
+    <div class="box box3">通过像素值调整径向渐变圆的圆心</div>
+    <div class="box box4">通过circle关键字调整为正圆</div>
+    <div class="box box5">通过像素值调整为正圆</div>
+    <div class="box box6">调整径向渐变的区域</div>
+    <div class="box box7">综合写法</div>
+</body>
+</html>
