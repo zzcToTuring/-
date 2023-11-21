@@ -1,0 +1,27 @@
+web字体
+    1、基本语法
+        可以通过 @font-face 指定字体的具体地址，浏览器会自动下载该字体，这样就不依赖用户电脑上的字体了
+        @font-face {
+            font-family: "情书字体";
+            src: url('./方正手迹.ttf');
+        }
+        @font-face {
+            font-family: "????";
+            font-display: swap;
+            src: url('webfont.eot'); /* IE9 */
+            src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('webfont.woff2') format('woff2'),
+            url('webfont.woff') format('woff'), /* chrome、firefox */
+            url('webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari,Android*/
+            url('webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+        }
+
+    2、定制字体
+        中文的字体文件很大，使用完整的字体文件不现实，通常针对某几个文字进行单独定制。
+        可使用阿里 Web 字体定制工具：https://www.iconfont.cn/webfont
+
+    3、字体图标
+        相比图片更加清晰。
+        灵活性高，更方便改变大小、颜色、风格等。
+        兼容性好， IE 也能支持。
+        阿里图标官网地址：https://www.iconfont.cn/（可使用在线 和 本地 两种方式写入）

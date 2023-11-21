@@ -1,0 +1,30 @@
+<!--
+  可同时使用位移，缩放，旋转对某个盒子进行变换
+  （注意：若进行旋转，旋转应放在最后【会改变X轴Y轴的方向，进而影响】）
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .outer{
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+      margin: 30px auto;
+    }
+    .inner{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      transform: translateX(50%) translateY(20%) scale(1.5) rotateZ(30deg);
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner">demo</div>
+</div>
+</body>
+</html>

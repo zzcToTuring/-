@@ -1,0 +1,61 @@
+<!--
+2D变换的前提：以盒子左上角为坐标远点，向两边扩散(正值)
+位移：
+  1. 先给元素添加 转换属性 transform
+        translateX：设置水平方向位移，需指定长度值；若指定的是百分比，是参考自身宽度的百分比。
+        translateY：设置垂直方向位移，需指定长度值；若指定的是百分比，是参考自身高度的百分比。
+        translate 一个值代表水平方向，两个值代表：水平和垂直方向。
+注意点：
+  1、位移与相对定位很相似，都不脱离文档流，不会影响到其它元素。
+  2、相对定位的百分比参考的是父元素；位移的百分比参考的是自身
+  3、若定位和位移均能达到相同的效果，建议使用位移，浏览器处理位移的效率更高
+  4、可链式编写：transform: translateX(30px) translateY(40px)
+  5、行内元素无效
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      width: 200px;
+      height: 200px;
+      border:2px solid black;
+      margin: 10px auto;
+      position: relative;
+    }
+    .inner{
+      width: 200px;
+      height: 200px;
+      background: skyblue;
+      /* 水平位移 */
+      /* transform: translateX(50px); */
+      /* 垂直位移 */
+      /* transform: translateY(50px); */
+      /* 水平+垂直位移 */
+      /* transform: translate(50px,50px); */
+    }
+
+    .inner2{
+      width: 100px;
+      height: 100px;
+      background: gray;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner">demo</div>
+</div>
+
+<!--使用位移达到盒子居中效果-->
+<div class="outer">
+  <div class="inner2">居中</div>
+</div>
+</body>
+</html>

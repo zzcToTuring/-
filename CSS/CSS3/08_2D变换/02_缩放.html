@@ -1,0 +1,38 @@
+<!--
+2D 缩放是指：让元素放大或缩小：
+语法：
+    先给元素添加 转换属性 transform
+      scaleX设置水平方向的缩放比例，值为一个数字， 1 表示不缩放，大于 1 放大，小于 1 缩小。
+      scaleY设置垂直方向的缩放比例，值为一个数字， 1 表示不缩放，大于 1 放大，小于 1 缩小。
+      scale同时设置水平方向、垂直方向的缩放比例，一个值代表同时设置水平和垂直缩放；两个值分别代表：水平缩放、垂直缩放。
+注意点：
+    可以写负数，但基本不用
+    借助缩放，可以在不更改浏览器选项的前提下，实现小于12px的文字
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      width: 200px;
+      height: 200px;
+      border: 2px black solid;
+      margin: 10px auto;
+    }
+    .inner{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      /*缩放案例（无法实现与行内块元素）*/
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner">demo</div>
+</div>
+</body>
+</html>

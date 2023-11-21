@@ -1,0 +1,33 @@
+<!--
+让元素在二维平面内，顺时针旋转或逆时针旋转，具体使用方式如下
+编写 transform 的具体值：
+    rotate[Z] 设置旋转角度，需指定一个角度值( deg )，正值顺时针，负值逆时针。
+    (只有在Z轴旋转是2D的，在XY轴旋转均为3D)
+注意：旋转的中心点默认为盒子的中心点
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+      margin: 30px auto;
+    }
+    .inner{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      transform: rotate(30deg);
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner">demo</div>
+</div>
+</body>
+</html>
