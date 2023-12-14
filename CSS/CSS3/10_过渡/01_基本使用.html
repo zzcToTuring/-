@@ -1,0 +1,46 @@
+<!--
+过渡可以在不使用 Flash 动画，不使用 JavaScript 的情况下，让元素从一种样式，平滑过渡为另一种样式
+添加过渡
+    哪个元素需要过渡，那么就往哪个元素身上添加
+哪些元素能过渡
+    值为数字，或者值能转为数字的属性，都支持过渡，否则不支持过渡。
+    常见的支持过渡的属性有：颜色、长度值、百分比、 z-index 、 opacity 、 2D 变换属性、 3D 变换属性、阴影。
+1、transition-property 定义哪个属性需要过渡
+    -- none ：不过渡任何属性。
+    -- all ：过渡所有能过渡的属性。
+    -- 具体某个属性名 ，例如： width 、 height ，若有多个以逗号分隔。
+2、transition-duration  设置过渡的持续时间
+(写一个表示所有过渡元素均采用此时间，写多个表示对应元素的过渡时间)
+    --0  没有默认时间[默认值，但这使得过渡毫无意义]
+    --S或 ms
+3、transition-delay 指定开始过渡的延迟时间
+    --s 或 ms
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+      /*设置哪些属性需要过渡*/
+      /*transition-property: width,height,background-color;*/
+      transition-property: all;
+      /*设置过渡时间*/
+      transition-duration: 3s;
+    }
+    .box:hover{
+      width: 400px;
+      height: 400px;
+      background-color: yellow;
+      transform: translate(50%) rotate(45deg) ;
+    }
+  </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

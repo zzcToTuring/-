@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      width: 130px;
+      height: 130px;
+      background-image: url("../images/bike.png");
+      margin: 100px auto;
+      animation:demo 1s 10ms steps(31) infinite;
+    }
+
+    @keyframes demo  {
+      0%{}
+      100%{
+        /*更改背景图所在的位置，以达到变化的效果*/
+        background-position: 0 -4030px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

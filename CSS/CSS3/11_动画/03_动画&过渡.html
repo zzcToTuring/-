@@ -1,0 +1,55 @@
+<!--
+1、动画可以更加方便设置开始与结束，而过渡不行(就css而言)
+2、过渡只能指定开始和结束，动画可以指定若干个帧，浏览器会使其平滑的发生变化
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer {
+            width: 1000px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+        }
+        /*使用过渡的方式完成效果*/
+        .inner1{
+            background-color: orange;
+            transition: 3s linear all;
+        }
+        .outer:hover .inner1{
+            transform: translateX(900px);
+        }
+        /*使用动画的方式完成效果*/
+        @keyframes demo {
+            0%{}
+            50%{
+                background-color: red;
+                border-radius: 50%;
+                box-shadow: 0 0 20px black;
+            }
+            100%{
+                transform: translateX(900px);
+            }
+        }
+        .inner2{
+            background: green;
+            animation-name: demo;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            animation-duration: 3s;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner inner1">过渡</div>
+    <div class="inner inner2">动画</div>
+</div>
+</body>
+</html>

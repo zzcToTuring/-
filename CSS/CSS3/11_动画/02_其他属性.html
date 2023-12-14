@@ -1,0 +1,62 @@
+<!--
+其他属性
+  1、animation-timing-function 设置动画的类型(与过渡类型一致，不过多叙述)
+  2、animation-iteration-count 指定动画的播放次数
+      --number ：动画循环次数
+      -- infinite ： 无限循环
+  3、animation-direction 指定动画方向
+      --normal ： 正常方向 (默认)
+      --reverse ： 反方向运行
+      --alternate ： 动画先正常运行再反方向运行，并持续交替运行
+      --alternate-reverse ： 动画先反运行再正方向运行，并持续交替运行
+  4、animation-fill-mode 设置动画之外的状态
+      --forwards ： 设置对象状态为动画结束时的状态
+      --backwards ： 设置对象状态为动画开始时的状态
+  5、animation-play-state 设置动画的播放状态(一般结合js使用)
+      --running ： 运动 (默认)
+      --paused ： 暂停
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      width: 800px;
+      height: 100px;
+      border: 1px solid black;
+    }
+    .inner{
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      /*使用动画 依次为动画名称、动画开始延迟、动画持续时间*/
+      animation-name: demo;
+      animation-delay: 0.5s;
+      animation-duration: 3s;
+      /*其他属性*/
+      animation-play-state: running;
+      animation-iteration-count: 11;
+      animation-direction: alternate;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes demo {
+      0%{}
+      50%{background-color: orange;}
+      100%{
+        transform: translateX(700px);
+        background-color: red;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner"></div>
+</div>
+</body>
+</html>

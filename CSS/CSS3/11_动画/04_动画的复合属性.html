@@ -1,0 +1,47 @@
+<!--
+复合属性：animation
+  能接收所有属性的值(animation-play-state除外，因为它一般都单独使用，不能使用复合属性),且没有数量、顺序要求
+  注意：
+    如果写一个时间，那么默认为动画持续时间
+    如果写两个时间，那么第一个时间为动画持续时间，第二个时间为动画开始延迟时间
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      width: 1000px;
+      height: 100px;
+      border:1px black solid;
+    }
+    .inner{
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      /*动画的符合属性*/
+      animation: demo  3s 100ms linear forwards;
+    }
+    @keyframes demo {
+      0%{}
+      50%{
+        background-color: red;
+        border-radius: 50%;
+      }
+    100%{transform: translateX(900px);} }
+
+
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner">demo</div>
+</div>
+</body>
+<script>
+  setTimeout(()=>{
+    document.getElementsByClassName("inner")[0].style.animationPlayState="paused"
+  },2000)
+</script>
+</html>
