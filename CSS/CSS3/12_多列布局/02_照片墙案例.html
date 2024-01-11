@@ -1,0 +1,77 @@
+<!--
+利用多列布局，完成简单的照片墙案例
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      column-count: 5;
+    }
+    img{
+      width: 100%;
+      transition: all linear 0.3s;
+    }
+    img:hover{
+      box-shadow: 0 0 20px black;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+<div>
+  <img src="../images/img1.jpg">
+  <img src="../images/img2.jpg">
+  <img src="../images/img3.jpg">
+  <img src="../images/img4.jpg">
+  <img src="../images/img5.jpg">
+  <img src="../images/img6.jpg">
+  <img src="../images/img7.jpg">
+  <img src="../images/img8.jpg">
+  <img src="../images/img9.jpg">
+  <img src="../images/img10.jpg">
+  <img src="../images/img11.jpg">
+  <img src="../images/img12.jpg">
+  <img src="../images/img13.jpg">
+  <img src="../images/img14.jpg">
+  <img src="../images/img1.jpg">
+  <img src="../images/img2.jpg">
+  <img src="../images/img3.jpg">
+  <img src="../images/img4.jpg">
+  <img src="../images/img5.jpg">
+  <img src="../images/img6.jpg">
+  <img src="../images/img7.jpg">
+  <img src="../images/img8.jpg">
+  <img src="../images/img9.jpg">
+  <img src="../images/img10.jpg">
+  <img src="../images/img11.jpg">
+  <img src="../images/img12.jpg">
+  <img src="../images/img13.jpg">
+  <img src="../images/img14.jpg">
+  <img src="../images/img1.jpg">
+  <img src="../images/img2.jpg">
+  <img src="../images/img3.jpg">
+  <img src="../images/img4.jpg">
+  <img src="../images/img5.jpg">
+  <img src="../images/img6.jpg">
+  <img src="../images/img7.jpg">
+  <img src="../images/img8.jpg">
+  <img src="../images/img9.jpg">
+  <img src="../images/img10.jpg">
+  <img src="../images/img11.jpg">
+  <img src="../images/img12.jpg">
+  <img src="../images/img13.jpg">
+  <img src="../images/img14.jpg">
+</div>
+</body>
+<script>
+  let elementsByName = document.getElementsByTagName("img");
+  for (let i = 0; i < elementsByName.length; i++) {
+    elementsByName.item(i).addEventListener("click",()=>{
+      //--js添加图片
+    })
+  }
+</script>
+</html>
