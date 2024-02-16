@@ -1,0 +1,54 @@
+<!--
+侧轴对其方式-单列模式(align-items)
+    侧轴的对其方式分为当行对其方式与多行对齐方式不同
+    1、侧轴的起始位置对齐 默认值 flex-start
+    2、侧轴的结束位置对其 flex-end
+    3、侧轴的中间位置对其 center
+    4、侧轴的中间位置对其(基线对其) baseline
+    5、拉伸到整个父容器（前提：伸缩项目不能给高度，才能自动拉伸） stretch
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .inner {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      box-sizing: border-box;
+    }
+    .inner2 {
+      height: 300px;
+      font-size: 80px;
+    }
+    .inner3 {
+      height: 100px;
+    }
+    .outer{
+      width: 1000px;
+      height: 600px;
+      background-color: #888;
+      margin: 0 auto;
+      /*基本配置*/
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      /*侧轴的对其方式*/
+      /*align-items: flex-end;*/
+      align-items: center;
+      /*align-items: baseline;*/
+      /*align-items: stretch;*/
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner">1x</div>
+  <div class="inner inner2">2x</div>
+  <div class="inner inner3">3x</div>
+</div>
+</body>
+</html>

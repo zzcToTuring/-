@@ -1,0 +1,51 @@
+<!--
+  实现水平居中的方式
+    1、父容器开启flex布局，随后使用justify-content和align-items实现水平垂直居中
+    2、父容器开启flex布局，随后子元素直接margin:auto
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      width: 300px;
+      height: 500px;
+      display: flex;
+      background-color: skyblue;
+      /*父容器为弹性盒子，才有主轴和侧轴，当然是在父容器中指定呀*/
+      justify-content: center;
+      align-items: center;
+    }
+    .inner{
+      width: 100px;
+      height: 100px;
+      background-color: black;
+    }
+
+    .demo1{
+      width: 300px;
+      height: 500px;
+      display: flex;
+      background-color: greenyellow;
+    }
+    .demo2{
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      margin: auto;
+    }
+
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner"></div>
+</div>
+<hr>
+<div class="demo1">
+  <div class="demo2"></div>
+</div>
+</body>
+</html>

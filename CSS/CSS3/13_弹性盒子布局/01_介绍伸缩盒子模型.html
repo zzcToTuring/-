@@ -1,0 +1,56 @@
+<!--
+简介：
+    09年，W3C提出一种新的盒子模型flexible box（伸缩盒子模型，又称弹性盒子）
+    他可以轻松的控制：元素分布方式、元素对其方式、元素视觉
+    他的出现，逐渐演变出了一套新的布局方案 flex布局
+伸缩容器：
+    开启了flex元素，就是伸缩容器
+    (display:flex 该容器就变成伸缩容器)
+伸缩项目：
+    伸缩容器的子元素自动变为伸缩项目
+    (仅仅是子元素变成伸缩项目，孙元素、重孙元素不变)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            width: 1000px;
+            height: 600px;
+            background-color: darkgray;
+            /*把这个盒子变为伸缩容器 .inner自动变为伸缩项目*/
+            display: flex;
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px black solid;
+        }
+        .inner3{
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+<!--
+简单展示flex布局
+div默认为块元素独占一行，变成flex之后随着主轴方向进行排列(后续讲解)
+-->
+<div class="outer">
+    <div class="inner">1</div>
+    <div class="inner">2</div>
+    <div class="inner inner3">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+    </div>
+</div>
+</body>
+<script>
+
+</script>
+</html>

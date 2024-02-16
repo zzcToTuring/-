@@ -1,0 +1,48 @@
+<!--
+主轴换行方向(flex-wrap)：
+  主轴的换行方向有：
+    1、默认值 不换行(nowrap) 会一直沿着主轴的方向排列下去，如果空间不够排列这么多盒子，则会压缩盒子原来的大小
+    2、自动换行(wrap) 自动换行，伸缩容器不够时自动换行
+    3、反向换行(wrap-reverse): 发生换行，但是方向是反着的
+    (通过开发者工具，可以查询盒子是被拉伸的，还是被压缩的，具体的具体是多少)
+    (后面会有具体的章节简介伸缩性)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      width: 1000px;
+      height: 600px;
+      background-color: pink;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap:nowrap;
+    }
+    .inner{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px black solid;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner">1</div>
+  <div class="inner">2</div>
+  <div class="inner">3</div>
+  <div class="inner">4</div>
+  <div class="inner">5</div>
+  <div class="inner">6</div>
+  <div class="inner">7</div>
+  <div class="inner">8</div>
+  <div class="inner">9</div>
+  <div class="inner">10</div>
+  <div class="inner">11</div>
+</div>
+</body>
+</html>

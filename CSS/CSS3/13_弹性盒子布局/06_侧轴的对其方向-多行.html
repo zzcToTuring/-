@@ -1,0 +1,63 @@
+<!--
+侧轴的对其方向(多行) ：align-content
+  1、拉伸、默认值 stretch（与当行模式相同，需要在伸缩项目没有高度时生效，能拉伸满整个父容器）
+  2、侧轴的起始位置对齐 flex-start
+  3、侧轴的结束位置对齐 flex-end
+  4、侧轴的中间位置对齐 center
+  5、伸缩项目之间的距离是相等的，且是边缘距离的2倍 space-around
+  6、伸缩项目之间的距离是相等的，且边缘没有距离 space-between
+  7、伸缩项目之间的距离是相等的 space-evenly
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .inner {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      box-sizing: border-box;
+    }
+    .inner2 {
+      height: 300px;
+    }
+    .inner3 {
+      height: 100px;
+    }
+    .outer {
+      width: 1000px;
+      height: 900px;
+      background-color: #888;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      /*侧轴的对其方式*/
+      /*align-content: flex-start;*/
+      /*align-content: flex-end;*/
+      /*align-content: space-between;*/
+      /*align-content: space-around;*/
+      /*align-content: space-evenly;*/
+      /*align-content: stretch;*/
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner">1</div>
+  <div class="inner inner2">2</div>
+  <div class="inner inner3">3</div>
+  <div class="inner">4</div>
+  <div class="inner">5</div>
+  <div class="inner">6</div>
+  <div class="inner">7</div>
+  <div class="inner">8</div>
+  <div class="inner">9</div>
+  <div class="inner">10</div>
+  <div class="inner">11</div>
+</div>
+</body>
+</html>

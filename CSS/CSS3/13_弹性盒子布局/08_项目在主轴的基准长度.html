@@ -1,0 +1,41 @@
+<!--
+基准长度flex-basis
+  设置主轴方向的基准长度，会让宽度和高度都失效
+  作用：浏览器根据这个属性设置的值，计算主轴上是否有多余空间，默认值 auto ，即：伸缩项目的宽或高。
+  PS：主轴横向：宽度失效；主轴纵向：高度失效
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .outer{
+      width: 1000px;
+      height: 500px;
+      background-color: #888888;
+      display: flex;
+    }
+    .inner{
+      width: 300px;
+      height: 300px;
+      border: 1px black solid;
+      background-color: orange;
+    }
+    .inner2{
+      flex-basis: 200px;
+      /*失效*/
+      width: 300px;
+
+    }
+  </style>
+</head>
+
+<body>
+<div class="outer">
+  <div class="inner"></div>
+  <div class="inner inner2"></div>
+  <div class="inner"></div>
+</div>
+</body>
+</html>
