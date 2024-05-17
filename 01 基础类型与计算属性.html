@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //number类型--最大值与最小值
+    let max_number = Number.MAX_SAFE_INTEGER
+    let min_number= Number.MIN_SAFE_INTEGER
+    console.log("number的最大值",max_number," number的最小值  ",min_number)
+
+    //number类型--typeof检验类型
+    console.log("使用typeof检测类型 :",typeof max_number)
+
+    //表达其他进制
+    let other_number=0xf
+    console.log("16进制的数据：",other_number)
+
+    //使用number与parseInt强制转变格式
+    console.log("number转化：",typeof Number("3.14"))
+    console.log("parseInt转化：",parseInt("100",2),typeof parseInt("10",2))
+    console.log("特殊NaN也是number类型 ",typeof (parseInt("a")))
+
+    //String类型
+    console.log("最基本的string类型：","hello world")
+    let string_number=666
+    console.log("number转string：",typeof string_number.toString())
+    console.log("boolean类型转string：",typeof true.toString())
+    console.log("其他方式导致强制转换：",typeof (string_number+""))
+
+    //null与undefined
+    console.log("null的类型为：",typeof null)
+    console.log("undefined类型为：",typeof undefined)
+
+    //boolean类型
+    console.log("最基本的boolean类型：",true,"  类型为：",typeof true)
+    console.log("string(空串)强制类型转化：",Boolean(""),"  非空串  :",Boolean("1111"))
+    console.log("null与undefined：",Boolean(null),"  ",Boolean(undefined))
+    console.log("object强制转化boolean：",Boolean(new function (){}))
+
+    //计算&逻辑属性的特殊操作
+    console.log("number转string：",typeof 1+"")
+    console.log("string转number：",typeof ("1"-0),typeof ("1"*1),typeof ("1"/1))
+    let number1=10
+    let number2=10
+    console.log(number1++,"  ",++number2)
+    console.log("逻辑属性的判断：",typeof (!!number1))
+
+
+
+</script>
+
+</html>
